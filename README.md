@@ -1,4 +1,4 @@
-<img width="672" height="497" alt="Screenshot 2026-01-03 011303" src="https://github.com/user-attachments/assets/3b4d3aed-23da-4235-896c-0f6d4e8dfe4a" /># 🌌 AltLife AI – Life Simulator
+# 🌌 AltLife AI – Life Simulator
 
 AltLife AI is an intelligent life simulation web application that predicts your future based on your choices, lifestyle, and career. Using Machine Learning, it analyzes your inputs and generates realistic predictions for **happiness, success, and financial growth**, along with a personalized life story.
 
