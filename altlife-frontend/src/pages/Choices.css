@@ -1,0 +1,160 @@
+.choices-page {
+  padding: 40px 0 80px;
+}
+
+.paths-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.path-card {
+  position: relative;
+  padding: 32px;
+  background: var(--glass-bg);
+  border: 2px solid var(--glass-border);
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+  overflow: hidden;
+}
+
+.path-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--path-gradient);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.path-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--path-color);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3), 0 0 40px rgba(99, 102, 241, 0.1);
+}
+
+.path-card:hover::before {
+  transform: scaleX(1);
+}
+
+.path-card.selected {
+  border-color: var(--path-color);
+  background: linear-gradient(180deg, rgba(99, 102, 241, 0.08) 0%, var(--glass-bg) 100%);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15), 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.path-card.selected::before {
+  transform: scaleX(1);
+}
+
+.path-icon-wrapper {
+  margin-bottom: 20px;
+}
+
+.path-icon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 28px;
+  color: white;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease;
+}
+
+.path-card:hover .path-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.path-title {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.path-card:hover .path-title,
+.path-card.selected .path-title {
+  color: var(--path-color);
+}
+
+.path-description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.path-traits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.trait-tag {
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid var(--glass-border);
+  border-radius: 100px;
+  transition: all 0.3s ease;
+}
+
+.path-card:hover .trait-tag {
+  background: rgba(99, 102, 241, 0.15);
+  border-color: var(--path-color);
+}
+
+.selected-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 6px 16px;
+  background: var(--gradient-1);
+  border-radius: 100px;
+  animation: scaleIn 0.3s ease-out;
+}
+
+.selected-badge span {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: white;
+}
+
+.choices-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  opacity: 0;
+  animation-delay: 0.6s;
+}
+
+@media (max-width: 768px) {
+  .paths-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .choices-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .choices-actions .btn {
+    width: 100%;
+    max-width: 320px;
+  }
+}

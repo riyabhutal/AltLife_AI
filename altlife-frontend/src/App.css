@@ -1,0 +1,192 @@
+/* =================== GLOBAL RESET =================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+body, html, #root {
+  width: 100%;
+  min-height: 100%;
+  background: #f4f6f9; /* clean light grey like enterprise dashboards */
+  color: #1f2937;
+}
+
+/* Smooth transitions globally */
+html {
+  scroll-behavior: smooth;
+}
+
+/* =================== NAVBAR / TOPBAR =================== */
+.topbar {
+  width: 100%;
+  background: #234e84;            /* deep business blue */
+  color: white;
+  padding: 14px 0;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.topbar-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #1f4f8a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #fff;
+}
+
+.brand-text {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.get-started {
+  border: none;
+  padding: 10px 16px;
+  background: #3b86d6;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.get-started:hover {
+  background: #2c6bb3;
+}
+
+/* =================== PAGE CONTAINER =================== */
+.page {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* =================== CARD GLOBAL STYLE =================== */
+.card {
+  width: 900px;
+  background: white;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+  border: 1px solid #e5e7eb;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =================== TITLES =================== */
+.main-title {
+  font-size: 32px;
+  font-weight: 800;
+  text-align: center;
+  color: #1f2937;
+}
+
+.subtitle {
+  text-align: center;
+  color: #6b7280;
+  margin-top: 6px;
+  margin-bottom: 26px;
+}
+
+/* Section titles */
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+/* =================== INPUTS =================== */
+label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: block;
+  color: #374151;
+}
+
+input, textarea {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 15px;
+  background: #fafafa;
+  transition: 0.15s;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #2d7fcc;
+  box-shadow: 0 4px 10px rgba(45, 127, 204, 0.2);
+  background: #fff;
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+}
+
+/* =================== BUTTONS =================== */
+.main-btn {
+  padding: 12px 20px;
+  background: #2d7fcc;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+  font-size: 15px;
+}
+
+.main-btn:hover {
+  background: #1d5fa5;
+  box-shadow: 0 4px 12px rgba(45, 127, 204, 0.3);
+}
+
+/* Muted button */
+.btn-muted {
+  background: transparent;
+  color: #6b7280;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-muted:hover {
+  color: #374151;
+}
+
+/* =================== RESPONSIVE =================== */
+@media (max-width: 900px) {
+  .card {
+    width: 100%;
+  }
+}
+

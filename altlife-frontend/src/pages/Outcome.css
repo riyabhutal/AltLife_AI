@@ -1,0 +1,243 @@
+.outcome-page {
+  padding: 40px 0 80px;
+  min-height: calc(100vh - 80px);
+}
+
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 200px);
+  text-align: center;
+}
+
+.loading-animation {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin-bottom: 32px;
+}
+
+.loading-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 3px solid transparent;
+  animation: loadingRing 1.5s linear infinite;
+}
+
+.loading-ring:nth-child(1) {
+  width: 100px;
+  height: 100px;
+  border-top-color: var(--primary);
+  animation-delay: 0s;
+}
+
+.loading-ring:nth-child(2) {
+  width: 80px;
+  height: 80px;
+  border-top-color: var(--secondary);
+  animation-delay: 0.2s;
+}
+
+.loading-ring:nth-child(3) {
+  width: 60px;
+  height: 60px;
+  border-top-color: var(--accent);
+  animation-delay: 0.4s;
+}
+
+@keyframes loadingRing {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.loading-state h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.loading-state p {
+  color: var(--text-secondary);
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+  opacity: 0;
+}
+
+.metric-card {
+  padding: 28px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow);
+}
+
+.metric-card.happiness { border-top: 3px solid #10b981; }
+.metric-card.success { border-top: 3px solid #6366f1; }
+.metric-card.finance { border-top: 3px solid #f59e0b; }
+
+.metric-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+.metric-card.happiness .metric-icon {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+}
+
+.metric-card.success .metric-icon {
+  background: rgba(99, 102, 241, 0.15);
+  color: #6366f1;
+}
+
+.metric-card.finance .metric-icon {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+}
+
+.metric-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.metric-label {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.metric-value {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.metric-bar {
+  height: 8px;
+  background: rgba(99, 102, 241, 0.1);
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.metric-fill {
+  height: 100%;
+  border-radius: 100px;
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 0;
+}
+
+.metric-card.happiness .metric-fill {
+  background: linear-gradient(90deg, #10b981, #34d399);
+}
+
+.metric-card.success .metric-fill {
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+}
+
+.metric-card.finance .metric-fill {
+  background: linear-gradient(90deg, #f59e0b, #fbbf24);
+}
+
+.chart-section {
+  padding: 32px;
+  margin-bottom: 32px;
+  opacity: 0;
+}
+
+.chart-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  margin-bottom: 24px;
+  color: var(--text-primary);
+}
+
+.chart-title svg {
+  color: var(--primary);
+}
+
+.chart-container {
+  width: 100%;
+}
+
+.story-section {
+  padding: 32px;
+  margin-bottom: 40px;
+  opacity: 0;
+}
+
+.story-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+}
+
+.story-title svg {
+  color: var(--secondary);
+}
+
+.story-content {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.story-content p {
+  margin-bottom: 16px;
+}
+
+.outcome-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  opacity: 0;
+}
+
+@media (max-width: 900px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .outcome-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .outcome-actions .btn {
+    width: 100%;
+    max-width: 320px;
+  }
+}
