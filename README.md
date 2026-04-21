@@ -143,9 +143,6 @@ npm run dev
 
 <img width="454" height="503" alt="Screenshot 2026-01-03 011358" src="https://github.com/user-attachments/assets/e88a1316-f054-49b9-bece-7fbcea144d11" />
 
-
-> 📌 Add your images inside a `screenshots/` folder in the root directory.
-
 ---
 
 ## 💡 Future Improvements
